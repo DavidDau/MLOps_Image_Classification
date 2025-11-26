@@ -1,0 +1,137 @@
+{% extends "base.html" %} {% block title %}Retrain Model - Image
+Classification{% endblock %} {% block content %}
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <h1 class="mb-4"><i class="fas fa-sync"></i> Model Retraining</h1>
+
+    <div class="card">
+      <div class="card-header bg-warning">
+        <h5 class="mb-0">Retrain Model with New Data</h5>
+      </div>
+      <div class="card-body">
+        <p>
+          Click the button below to start retraining the model with the uploaded
+          training data. This process will use the current model as a pretrained
+          model and fine-tune it with new data.
+        </p>
+
+        <div class="alert alert-info">
+          <h6>
+            <i class="fas fa-info-circle"></i> What happens during retraining:
+          </h6>
+          <ol>
+            <li>Loads the current trained model</li>
+            <li>Loads all images from the training directory</li>
+            <li>Preprocesses and augments the data</li>
+            <li>Fine-tunes the model with new data</li>
+            <li>Saves the updated model</li>
+            <li>Reloads the model for predictions</li>
+          </ol>
+        </div>
+
+        {% if status.is_running %}
+        <div class="alert alert-warning">
+          <h5>
+            <i class="fas fa-spinner fa-spin"></i> Retraining in Progress...
+          </h5>
+          <p>{{ status.message }}</p>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated"
+              role="progressbar"
+              style="width: {{ status.progress }}%"
+              id="progressBar"
+            >
+              {{ status.progress }}%
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <form method="POST">
+          <button
+            type="submit"
+            class="btn btn-warning btn-lg"
+            {%
+            if
+            status.is_running
+            %}disabled{%
+            endif
+            %}
+          >
+            <i class="fas fa-sync-alt"></i> Start Retraining
+          </button>
+        </form>
+        {% endif %} {% if status.last_retrain_time %}
+        <div class="mt-3">
+          <p class="text-muted">
+            <i class="fas fa-clock"></i> Last retrained: {{
+            status.last_retrain_time }}
+          </p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="card mt-4">
+      <div class="card-header">
+        <h5 class="mb-0">Important Notes</h5>
+      </div>
+      <div class="card-body">
+        <div class="alert alert-warning">
+          <strong
+            ><i class="fas fa-exclamation-triangle"></i> Before
+            Retraining:</strong
+          >
+          <ul class="mb-0">
+            <li>Make sure you have uploaded sufficient training data</li>
+            <li>Retraining can take 5-30 minutes depending on data size</li>
+            <li>The model will be temporarily unavailable during retraining</li>
+            <li>Don't close this page while retraining is in progress</li>
+          </ul>
+        </div>
+
+        <div class="alert alert-success">
+          <strong><i class="fas fa-check-circle"></i> After Retraining:</strong>
+          <ul class="mb-0">
+            <li>The new model will be automatically loaded</li>
+            <li>You can immediately start making predictions</li>
+            <li>Previous model versions are backed up automatically</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if status.is_running %}
+<script>
+  // Poll for retraining status
+  function updateStatus() {
+    fetch("/api/retrain_status")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.is_running) {
+          // Update progress bar
+          const progressBar = document.getElementById("progressBar");
+          if (progressBar) {
+            progressBar.style.width = data.progress + "%";
+            progressBar.textContent = data.progress + "%";
+          }
+
+          // Continue polling
+          setTimeout(updateStatus, 2000);
+        } else {
+          // Retraining finished, reload page
+          location.reload();
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching status:", error);
+        setTimeout(updateStatus, 5000);
+      });
+  }
+
+  // Start polling
+  setTimeout(updateStatus, 2000);
+</script>
+{% endif %} {% endblock %}

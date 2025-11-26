@@ -1,0 +1,133 @@
+/* Custom Styles for Image Classification MLOps */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.jumbotron {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.img-thumbnail {
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.progress {
+  height: 25px;
+  border-radius: 8px;
+}
+
+.progress-bar {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.badge {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+.btn-lg {
+  padding: 15px 30px;
+  font-size: 18px;
+}
+
+.alert {
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.alert-info {
+  border-left-color: #0dcaf0;
+}
+
+.alert-warning {
+  border-left-color: #ffc107;
+}
+
+.alert-danger {
+  border-left-color: #dc3545;
+}
+
+.alert-success {
+  border-left-color: #198754;
+}
+
+.table {
+  background-color: white;
+}
+
+.table thead {
+  background-color: #f8f9fa;
+}
+
+.card-header {
+  font-weight: 600;
+  padding: 15px 20px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Animation for loading */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .jumbotron {
+    padding: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .card {
+    margin-bottom: 15px;
+  }
+}

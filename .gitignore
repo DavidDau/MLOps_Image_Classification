@@ -1,0 +1,100 @@
+# .gitignore for MLOps Image Classification Project
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Models (uncomment if models are too large for git)
+# models/*.h5
+# models/*.tf
+# models/*.pkl
+# models/saved_model/
+
+# Data (uncomment to avoid committing large datasets)
+# data/train/
+# data/test/
+# data/uploaded/
+
+# Logs
+logs/
+*.log
+prediction_log.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Flask
+instance/
+.webassets-cache
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Docker
+.dockerignore
+
+# Locust
+locust_*.csv
+locust_report.html
+
+# System files
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Uploaded files (if sensitive)
+# data/uploaded/*
+# !data/uploaded/.gitkeep
+
+# Model checkpoints
+*.ckpt
+checkpoint
+
+# TensorBoard
+tensorboard_logs/
+
+# Cache
+.cache/
+*.cache

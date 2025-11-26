@@ -1,0 +1,230 @@
+{% extends "base.html" %} {% block title %}Monitoring - Image Classification{%
+endblock %} {% block content %}
+<div class="row">
+  <div class="col-12">
+    <h1 class="mb-4"><i class="fas fa-heartbeat"></i> System Monitoring</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="card text-center mb-4">
+      <div class="card-body">
+        <i class="fas fa-server fa-3x text-primary mb-3"></i>
+        <h5 class="card-title">Model Status</h5>
+        <h3><span class="badge bg-success">ONLINE</span></h3>
+        <p class="text-muted">{{ metrics.uptime }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card text-center mb-4">
+      <div class="card-body">
+        <i class="fas fa-microchip fa-3x text-info mb-3"></i>
+        <h5 class="card-title">CPU Usage</h5>
+        <h3>{{ "%.1f"|format(metrics.cpu_percent) }}%</h3>
+        <div class="progress">
+          <div
+            class="progress-bar bg-info"
+            role="progressbar"
+            style="width: {{ metrics.cpu_percent }}%"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card text-center mb-4">
+      <div class="card-body">
+        <i class="fas fa-memory fa-3x text-warning mb-3"></i>
+        <h5 class="card-title">Memory Usage</h5>
+        <h3>{{ "%.1f"|format(metrics.memory_percent) }}%</h3>
+        <div class="progress">
+          <div
+            class="progress-bar bg-warning"
+            role="progressbar"
+            style="width: {{ metrics.memory_percent }}%"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card text-center mb-4">
+      <div class="card-body">
+        <i class="fas fa-hdd fa-3x text-danger mb-3"></i>
+        <h5 class="card-title">Disk Usage</h5>
+        <h3>{{ "%.1f"|format(metrics.disk_percent) }}%</h3>
+        <div class="progress">
+          <div
+            class="progress-bar bg-danger"
+            role="progressbar"
+            style="width: {{ metrics.disk_percent }}%"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card mb-4">
+      <div class="card-header">
+        <h5 class="mb-0">Prediction Statistics</h5>
+      </div>
+      <div class="card-body">
+        {% if pred_stats and not pred_stats.get('error') %}
+        <table class="table">
+          <tr>
+            <th>Total Predictions:</th>
+            <td>{{ pred_stats.total_predictions }}</td>
+          </tr>
+          <tr>
+            <th>Successful:</th>
+            <td>
+              <span class="badge bg-success"
+                >{{ pred_stats.successful_predictions }}</span
+              >
+              ({{ "%.1f"|format((pred_stats.successful_predictions /
+              pred_stats.total_predictions * 100) if
+              pred_stats.total_predictions > 0 else 0) }}%)
+            </td>
+          </tr>
+          <tr>
+            <th>Failed:</th>
+            <td>
+              <span class="badge bg-danger"
+                >{{ pred_stats.failed_predictions }}</span
+              >
+              ({{ "%.1f"|format((pred_stats.failed_predictions /
+              pred_stats.total_predictions * 100) if
+              pred_stats.total_predictions > 0 else 0) }}%)
+            </td>
+          </tr>
+          <tr>
+            <th>Average Confidence:</th>
+            <td>{{ "%.2f"|format(pred_stats.average_confidence * 100) }}%</td>
+          </tr>
+          <tr>
+            <th>Min Confidence:</th>
+            <td>{{ "%.2f"|format(pred_stats.min_confidence * 100) }}%</td>
+          </tr>
+          <tr>
+            <th>Max Confidence:</th>
+            <td>{{ "%.2f"|format(pred_stats.max_confidence * 100) }}%</td>
+          </tr>
+        </table>
+        {% else %}
+        <p class="text-muted">No prediction data available yet.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card mb-4">
+      <div class="card-header">
+        <h5 class="mb-0">Retraining Status</h5>
+      </div>
+      <div class="card-body">
+        {% if retrain_status.is_running %}
+        <div class="alert alert-warning">
+          <h6><i class="fas fa-spinner fa-spin"></i> Retraining in Progress</h6>
+          <p>{{ retrain_status.message }}</p>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated"
+              role="progressbar"
+              style="width: {{ retrain_status.progress }}%"
+            >
+              {{ retrain_status.progress }}%
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="alert alert-success">
+          <h6><i class="fas fa-check-circle"></i> Model Ready</h6>
+          <p>No retraining in progress.</p>
+          {% if retrain_status.last_retrain_time %}
+          <p class="mb-0 text-muted">
+            Last retrained: {{ retrain_status.last_retrain_time }}
+          </p>
+          {% endif %}
+        </div>
+        {% endif %}
+
+        <a href="{{ url_for('retrain') }}" class="btn btn-warning">
+          <i class="fas fa-sync"></i> Go to Retraining Page
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">System Health</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <h6>CPU Health</h6>
+            <p>
+              {% if metrics.cpu_percent < 50 %}
+              <span class="badge bg-success">Healthy</span>
+              {% elif metrics.cpu_percent < 80 %}
+              <span class="badge bg-warning">Moderate</span>
+              {% else %}
+              <span class="badge bg-danger">High Load</span>
+              {% endif %}
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h6>Memory Health</h6>
+            <p>
+              {% if metrics.memory_percent < 70 %}
+              <span class="badge bg-success">Healthy</span>
+              {% elif metrics.memory_percent < 90 %}
+              <span class="badge bg-warning">Moderate</span>
+              {% else %}
+              <span class="badge bg-danger">Critical</span>
+              {% endif %}
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h6>Disk Health</h6>
+            <p>
+              {% if metrics.disk_percent < 80 %}
+              <span class="badge bg-success">Healthy</span>
+              {% elif metrics.disk_percent < 95 %}
+              <span class="badge bg-warning">Moderate</span>
+              {% else %}
+              <span class="badge bg-danger">Critical</span>
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Auto-refresh metrics every 5 seconds
+  setInterval(function () {
+    fetch("/api/metrics")
+      .then((response) => response.json())
+      .then((data) => {
+        // Update without page reload if needed
+        location.reload();
+      })
+      .catch((error) => console.error("Error fetching metrics:", error));
+  }, 30000); // Refresh every 30 seconds
+</script>
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Image Classification MLOps{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="jumbotron bg-light p-5 rounded">
+            <h1 class="display-4">Welcome to Image Classification MLOps Pipeline</h1>
+            <p class="lead">A complete end-to-end machine learning pipeline for image classification with automated retraining capabilities.</p>
+            <hr class="my-4">
+            <p>This application demonstrates:</p>
+            <ul>
+                <li>Real-time image classification using Transfer Learning (MobileNetV2)</li>
+                <li>Interactive data visualizations</li>
+                <li>Bulk data upload for model improvement</li>
+                <li>One-click model retraining</li>
+                <li>System monitoring and model uptime tracking</li>
+            </ul>
+            <a class="btn btn-primary btn-lg" href="{{ url_for('predict') }}" role="button">
+                <i class="fas fa-image"></i> Start Predicting
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Model Status</h5>
+                <p class="card-text">
+                    <span class="badge bg-success">Online</span>
+                </p>
+                <p class="text-muted">Uptime: {{ metrics.uptime }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-microchip fa-3x text-info mb-3"></i>
+                <h5 class="card-title">CPU Usage</h5>
+                <p class="card-text">
+                    <h3>{{ "%.1f"|format(metrics.cpu_percent) }}%</h3>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-memory fa-3x text-warning mb-3"></i>
+                <h5 class="card-title">Memory Usage</h5>
+                <p class="card-text">
+                    <h3>{{ "%.1f"|format(metrics.memory_percent) }}%</h3>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-hdd fa-3x text-danger mb-3"></i>
+                <h5 class="card-title">Disk Usage</h5>
+                <p class="card-text">
+                    <h3>{{ "%.1f"|format(metrics.disk_percent) }}%</h3>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <h2>Features</h2>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-image text-primary"></i> Single Image Prediction</h5>
+                        <p class="card-text">Upload any image and get instant classification results with confidence scores.</p>
+                        <a href="{{ url_for('predict') }}" class="btn btn-sm btn-primary">Try Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-chart-bar text-success"></i> Data Visualizations</h5>
+                        <p class="card-text">Explore dataset statistics and model performance through interactive charts.</p>
+                        <a href="{{ url_for('visualizations') }}" class="btn btn-sm btn-success">View Charts</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-upload text-info"></i> Bulk Data Upload</h5>
+                        <p class="card-text">Upload multiple images at once to expand the training dataset.</p>
+                        <a href="{{ url_for('upload_data') }}" class="btn btn-sm btn-info">Upload Data</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-sync text-warning"></i> Model Retraining</h5>
+                        <p class="card-text">Trigger model retraining with updated data to improve performance.</p>
+                        <a href="{{ url_for('retrain') }}" class="btn btn-sm btn-warning">Retrain Model</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
