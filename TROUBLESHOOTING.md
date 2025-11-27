@@ -2,7 +2,7 @@
 
 Common issues and solutions for the MLOps Image Classification project.
 
-## 🔧 Installation Issues
+## Installation Issues
 
 ### Issue: `pip install` fails with dependency conflicts
 
@@ -45,7 +45,7 @@ pip install tensorflow-macos
 pip install tensorflow-metal
 ```
 
-## 🚫 Model Training Issues
+## Model Training Issues
 
 ### Issue: Out of Memory during training
 
@@ -107,7 +107,7 @@ EPOCHS = 100
 LEARNING_RATE = 0.00001  # Smaller for fine-tuning
 ```
 
-## 🌐 Application Issues
+## Application Issues
 
 ### Issue: Application fails to start - "Model file not found"
 
@@ -196,7 +196,7 @@ rm models/image_classifier_model.h5
 # Then retrain using notebook
 ```
 
-## 🐳 Docker Issues
+## Docker Issues
 
 ### Issue: Docker build fails
 
@@ -261,7 +261,7 @@ http://localhost:5000
 New-NetFirewallRule -DisplayName "Flask App" -Direction Inbound -LocalPort 5000 -Protocol TCP -Action Allow
 ```
 
-## 📊 Load Testing Issues
+## Load Testing Issues
 
 ### Issue: Locust web interface won't start
 
@@ -310,7 +310,7 @@ class ImageClassificationUser(HttpUser):
     network_timeout = 60.0  # Increase timeout
 ```
 
-## 📓 Jupyter Notebook Issues
+## Jupyter Notebook Issues
 
 ### Issue: Kernel keeps dying during training
 
@@ -347,7 +347,7 @@ jupyter nbconvert --clear-output --inplace notebook/image_classification.ipynb
 # Then run cells again to generate outputs
 ```
 
-## 🔄 Retraining Issues
+## Retraining Issues
 
 ### Issue: Retraining fails with "No images found"
 
@@ -395,7 +395,7 @@ Get-PSDrive C
 df -h
 ```
 
-## 🎥 Video Recording Issues
+## Video Recording Issues
 
 ### Issue: Video file too large to upload
 
@@ -424,7 +424,7 @@ df -h
 3. **Test audio before full recording**
 4. **Add subtitles if needed**
 
-## 📦 GitHub Issues
+## GitHub Issues
 
 ### Issue: Push fails - file too large
 
@@ -459,7 +459,7 @@ git push -f origin main
 # Delete old one and create fresh
 ```
 
-## 💡 General Tips
+## General Tips
 
 ### Performance Optimization
 
@@ -510,7 +510,7 @@ service = PredictionService(...)
 result = service.predict_image('test.jpg')
 ```
 
-## 🆘 Still Having Issues?
+## Still Having Issues?
 
 If none of the above solutions work:
 
@@ -520,7 +520,7 @@ If none of the above solutions work:
 4. **Simplify** - Start with a minimal version that works
 5. **Ask for help** - Share specific error messages
 
-## 📞 Emergency Quick Fixes
+## Emergency Quick Fixes
 
 If you're close to deadline:
 

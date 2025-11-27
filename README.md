@@ -4,6 +4,8 @@ A comprehensive end-to-end machine learning pipeline for image classification fe
 
 **[ Click here to watch the demonstration video](https://youtu.be/jbuXZ30CwvA)**
 
+> **Video Highlights**: This demonstration covers single image prediction, bulk data upload, model retraining process, system monitoring, and complete MLOps pipeline walkthrough.
+
 ## Live Demo
 
 **Application URL**: [Add your deployed URL here if applicable]
@@ -408,6 +410,18 @@ Load testing performed using Locust with the following scenarios:
 | Normal Load | 50    | 5/sec      | 5 min    | [See LOAD_TEST_RESULTS.md] |
 | Heavy Load  | 100   | 10/sec     | 5 min    | [See LOAD_TEST_RESULTS.md] |
 | Peak Load   | 200   | 20/sec     | 3 min    | [See LOAD_TEST_RESULTS.md] |
+
+### Key Performance Metrics
+
+**Test Results Summary** (25 concurrent users):
+
+- **Total Requests**: 1,089
+- **Success Rate**: 100% (0 failures)
+- **Average Response Time**: 2,791.03 ms
+- **Median Response Time**: 2,200 ms
+- **Requests per Second**: ~6 RPS
+- **95th Percentile**: 5,800 ms
+- **99th Percentile**: 7,900 ms
 
 ### Running Load Tests
 

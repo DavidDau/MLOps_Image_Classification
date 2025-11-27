@@ -2,7 +2,7 @@
 
 This guide will help you get started quickly with the MLOps Image Classification project.
 
-## 🚀 Quick Start (5 minutes)
+## Quick Start (5 minutes)
 
 ### Step 1: Clone and Setup Environment
 
@@ -85,7 +85,7 @@ locust -f locustfile.py --host=http://localhost:5000
 # Click "Start swarming"
 ```
 
-## 🐳 Docker Quick Start (3 minutes)
+## Docker Quick Start (3 minutes)
 
 ### Prerequisites
 
@@ -106,7 +106,7 @@ docker-compose -f deployment/docker-compose.yml up -d --build
 # Access: http://localhost:5000
 ```
 
-## 📋 Checklist
+## Checklist
 
 Before submitting, ensure you have:
 
@@ -120,47 +120,47 @@ Before submitting, ensure you have:
 - [ ] Git repository is public or accessible
 - [ ] All requirements from rubric are met
 
-## 🎯 Meeting Rubric Requirements
+## Meeting Rubric Requirements
 
-### ✅ Video Demo (5 points)
+### Video Demo (5 points)
 
 - Record screen with camera on
 - Show prediction process (upload image, get result)
 - Show retraining process (upload data, trigger retrain)
 - Duration: 3-5 minutes
 
-### ✅ Retraining Process (10 points)
+### Retraining Process (10 points)
 
 Your project includes:
 
-1. ✅ Data file uploading and saving (`/upload_data` page)
-2. ✅ Data preprocessing of uploaded data (preprocessing.py)
-3. ✅ Retraining using custom model as pretrained (`/retrain` page, model.py)
+1. Data file uploading and saving (`/upload_data` page)
+2. Data preprocessing of uploaded data (preprocessing.py)
+3. Retraining using custom model as pretrained (`/retrain` page, model.py)
 
-### ✅ Prediction Process (10 points)
+### Prediction Process (10 points)
 
 Your project includes:
 
-1. ✅ Image upload for prediction (`/predict` page)
-2. ✅ Displays correct prediction with confidence (prediction.py)
+1. Image upload for prediction (`/predict` page)
+2. Displays correct prediction with confidence (prediction.py)
 
-### ✅ Evaluation of Models (10 points)
+### Evaluation of Models (10 points)
 
 Your notebook includes:
 
-1. ✅ Clear preprocessing steps
-2. ✅ Optimization techniques (transfer learning, regularization, early stopping, etc.)
-3. ✅ 4+ evaluation metrics (accuracy, loss, precision, recall, F1-score, confusion matrix)
+1. Clear preprocessing steps
+2. Optimization techniques (transfer learning, regularization, early stopping, etc.)
+3. 4+ evaluation metrics (accuracy, loss, precision, recall, F1-score, confusion matrix)
 
-### ✅ Deployment Package (10 points)
+### Deployment Package (10 points)
 
 Your project includes:
 
-1. ✅ Web UI (Flask application)
-2. ✅ Data insights/visualizations (`/visualizations` page)
-3. ✅ Dockerized deployment (Dockerfile, docker-compose.yml)
+1. Web UI (Flask application)
+2. Data insights/visualizations (`/visualizations` page)
+3. Dockerized deployment (Dockerfile, docker-compose.yml)
 
-## 🎥 Recording Your Video Demo
+## Recording Your Video Demo
 
 ### Tools
 
@@ -209,7 +209,7 @@ The system successfully uploads data, preprocesses it, and retrains
 using the existing model as a pretrained base. Thank you!"
 ```
 
-## 🆘 Troubleshooting
+## Troubleshooting
 
 ### Model not found error
 
@@ -245,13 +245,13 @@ docker-compose -f deployment/docker-compose.yml build --no-cache
 - Reduce number of training images
 - Close other applications
 
-## 📞 Need Help?
+## Need Help?
 
 - Check the main [README.md](README.md) for detailed documentation
 - Review the code comments in each file
 - Check error logs in `logs/` directory
 
-## ⏱️ Time Estimates
+## Time Estimates
 
 - Setup environment: 5 minutes
 - Download data: 5-10 minutes
@@ -261,4 +261,4 @@ docker-compose -f deployment/docker-compose.yml build --no-cache
 - Load testing: 5-10 minutes
 - **Total**: ~1-2 hours
 
-Good luck! 🚀
+Good luck!

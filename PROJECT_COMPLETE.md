@@ -1,138 +1,138 @@
-# 🎉 Project Complete!
+# Project Complete!
 
 ## What Has Been Created
 
 Your **MLOps Image Classification Pipeline** is now fully set up with all components necessary to meet the assignment requirements and achieve excellent scores on the rubric.
 
-## 📦 What You Have
+## What You Have
 
 ### 1. **Complete Machine Learning Pipeline**
 
 #### Jupyter Notebook (`notebook/image_classification.ipynb`)
 
-- ✅ Comprehensive data preprocessing with augmentation
-- ✅ Transfer Learning using MobileNetV2 (pretrained model)
-- ✅ Two-phase training (frozen → fine-tuning)
-- ✅ Multiple optimization techniques:
+- Comprehensive data preprocessing with augmentation
+- Transfer Learning using MobileNetV2 (pretrained model)
+- Two-phase training (frozen → fine-tuning)
+- Multiple optimization techniques:
   - L2 Regularization
   - Dropout (0.5 and 0.3)
   - Batch Normalization
   - Early Stopping
   - Learning Rate Reduction
   - Adam Optimizer
-- ✅ **6 Evaluation Metrics**:
+- **6 Evaluation Metrics**:
   - Accuracy
   - Loss
   - Precision
   - Recall
   - F1-Score
   - Confusion Matrix
-- ✅ Training history visualization
-- ✅ Sample predictions with visualizations
-- ✅ Model saved in .h5 format
+- Training history visualization
+- Sample predictions with visualizations
+- Model saved in .h5 format
 
 #### Python Source Code (`src/`)
 
-- ✅ **preprocessing.py** - Data preprocessing, augmentation, validation
-- ✅ **model.py** - Model architecture, training, retraining, fine-tuning
-- ✅ **prediction.py** - Prediction service with comprehensive API
+- **preprocessing.py** - Data preprocessing, augmentation, validation
+- **model.py** - Model architecture, training, retraining, fine-tuning
+- **prediction.py** - Prediction service with comprehensive API
 
 ### 2. **Full-Featured Web Application**
 
 #### Flask Application (`app/`)
 
-- ✅ **Home Page** - Dashboard with system metrics
-- ✅ **Prediction Page** - Upload image, get instant results with confidence scores
-- ✅ **Visualizations Page** - Interactive charts showing:
+- **Home Page** - Dashboard with system metrics
+- **Prediction Page** - Upload image, get instant results with confidence scores
+- **Visualizations Page** - Interactive charts showing:
   - Dataset distribution (bar chart)
   - Prediction statistics (pie chart)
   - Data insights and interpretations
-- ✅ **Upload Data Page** - Bulk image upload organized by class
-- ✅ **Retrain Page** - One-click model retraining with progress tracking
-- ✅ **Monitoring Page** - Real-time system health and model uptime
-- ✅ **RESTful API** - `/api/predict`, `/api/metrics`, `/api/retrain_status`
+- **Upload Data Page** - Bulk image upload organized by class
+- **Retrain Page** - One-click model retraining with progress tracking
+- **Monitoring Page** - Real-time system health and model uptime
+- **RESTful API** - `/api/predict`, `/api/metrics`, `/api/retrain_status`
 
 #### Features
 
-- ✅ Beautiful Bootstrap 5 UI
-- ✅ Responsive design
-- ✅ Real-time progress tracking
-- ✅ Error handling
-- ✅ Image preview
-- ✅ File validation
-- ✅ System monitoring (CPU, Memory, Disk)
+- Beautiful Bootstrap 5 UI
+- Responsive design
+- Real-time progress tracking
+- Error handling
+- Image preview
+- File validation
+- System monitoring (CPU, Memory, Disk)
 
 ### 3. **Production-Ready Deployment**
 
 #### Docker Configuration (`deployment/`)
 
-- ✅ **Dockerfile** - Optimized Python container
-- ✅ **docker-compose.yml** - Multi-container orchestration
-- ✅ **nginx.conf** - Reverse proxy configuration
-- ✅ **Deploy scripts** - Automated deployment (PowerShell & Bash)
-- ✅ Health checks
-- ✅ Volume management
-- ✅ Network configuration
+- **Dockerfile** - Optimized Python container
+- **docker-compose.yml** - Multi-container orchestration
+- **nginx.conf** - Reverse proxy configuration
+- **Deploy scripts** - Automated deployment (PowerShell & Bash)
+- Health checks
+- Volume management
+- Network configuration
 
 ### 4. **Load Testing & Performance**
 
 #### Locust Scripts (`locust/`)
 
-- ✅ **locustfile.py** - Comprehensive load testing
+- **locustfile.py** - Comprehensive load testing
   - Multiple user scenarios
   - Different load patterns
   - Step-load ramping
   - Background tasks
-- ✅ **LOAD_TEST_RESULTS.md** - Results documentation template
-- ✅ Statistics tracking
-- ✅ Performance metrics collection
+- **LOAD_TEST_RESULTS.md** - Results documentation template
+- Statistics tracking
+- Performance metrics collection
 
 ### 5. **Comprehensive Documentation**
 
-- ✅ **README.md** - Complete project documentation
-- ✅ **QUICK_START.md** - 5-minute setup guide
-- ✅ **SUBMISSION_CHECKLIST.md** - Ensures you meet all requirements
-- ✅ **TROUBLESHOOTING.md** - Solutions for common issues
-- ✅ **requirements.txt** - All dependencies listed
-- ✅ **.gitignore** - Proper Git configuration
+- **README.md** - Complete project documentation
+- **QUICK_START.md** - 5-minute setup guide
+- **SUBMISSION_CHECKLIST.md** - Ensures you meet all requirements
+- **TROUBLESHOOTING.md** - Solutions for common issues
+- **requirements.txt** - All dependencies listed
+- **.gitignore** - Proper Git configuration
 
 ### 6. **Helper Scripts**
 
-- ✅ **setup.py** - Automated setup script
-- ✅ **download_sample_data.py** - Dataset setup helper
+- **setup.py** - Automated setup script
+- **download_sample_data.py** - Dataset setup helper
 
-## 🎯 Rubric Coverage
+## Rubric Coverage
 
-### Video Demo (5 points) - ✅ Ready
+### Video Demo (5 points) - Ready
 
 - Template provided
 - Clear instructions for recording
 - Script included in QUICK_START.md
 
-### Retraining Process (10 points) - ✅ Complete
+### Retraining Process (10 points) - Complete
 
-1. ✅ **Data Upload** - `/upload_data` page with bulk upload
-2. ✅ **Data Preprocessing** - Automatic preprocessing on uploaded data
-3. ✅ **Retraining** - Uses existing model as pretrained base (model.py retrain method)
+1. **Data Upload** - `/upload_data` page with bulk upload
+2. **Data Preprocessing** - Automatic preprocessing on uploaded data
+3. **Retraining** - Uses existing model as pretrained base (model.py retrain method)
 
-### Prediction Process (10 points) - ✅ Complete
+### Prediction Process (10 points) - Complete
 
-1. ✅ **Image Upload** - Intuitive UI for single image predictions
-2. ✅ **Correct Predictions** - Confidence scores displayed
+1. **Image Upload** - Intuitive UI for single image predictions
+2. **Correct Predictions** - Confidence scores displayed
 
-### Evaluation of Models (10 points) - ✅ Complete
+### Evaluation of Models (10 points) - Complete
 
-1. ✅ **Preprocessing Steps** - Well documented in notebook
-2. ✅ **Optimization Techniques** - Multiple techniques implemented
-3. ✅ **Evaluation Metrics** - 6 metrics (exceeds requirement of 4)
+1. **Preprocessing Steps** - Well documented in notebook
+2. **Optimization Techniques** - Multiple techniques implemented
+3. **Evaluation Metrics** - 6 metrics (exceeds requirement of 4)
 
-### Deployment Package (10 points) - ✅ Complete
+### Deployment Package (10 points) - Complete
 
-1. ✅ **Web UI** - Full Flask application (not just API)
-2. ✅ **Data Insights** - Multiple visualizations and interpretations
-3. ✅ **Dockerized** - Complete Docker setup
+1. **Web UI** - Full Flask application (not just API)
+2. **Data Insights** - Multiple visualizations and interpretations
+3. **Dockerized** - Complete Docker setup
 
-## 📊 Features Beyond Requirements
+## Features Beyond Requirements
 
 Your project includes several features that exceed the assignment requirements:
 
@@ -145,7 +145,7 @@ Your project includes several features that exceed the assignment requirements:
 7. **Professional Documentation** - Multiple guides for different purposes
 8. **Automated Setup** - Scripts to streamline installation
 
-## 🚀 Next Steps
+## Next Steps
 
 ### Before You Start
 
@@ -206,7 +206,7 @@ Your project includes several features that exceed the assignment requirements:
    - First attempt: ZIP file
    - Second attempt: GitHub repository
 
-## 💪 Your Competitive Advantages
+## Your Competitive Advantages
 
 This project demonstrates:
 
@@ -237,7 +237,7 @@ This project demonstrates:
    - Resource monitoring
    - Optimization techniques
 
-## 🎓 What You've Learned
+## What You've Learned
 
 By completing this project, you've gained hands-on experience with:
 
@@ -248,7 +248,7 @@ By completing this project, you've gained hands-on experience with:
 - **DevOps**: Docker, containerization, orchestration
 - **Software Engineering**: Clean code, documentation, testing
 
-## 📈 Estimated Score
+## Estimated Score
 
 Based on the rubric:
 
@@ -258,20 +258,20 @@ Based on the rubric:
 - Evaluation: 10/10 points (preprocessing + optimization + 6 metrics)
 - Deployment: 10/10 points (Web UI + visualizations + Docker)
 
-**Total**: 45/45 points 🎉
+**Total**: 45/45 points
 
-## 🎬 Ready to Record Your Video?
+## Ready to Record Your Video?
 
 Your video should demonstrate:
 
-1. ✅ Uploading and predicting an image (show correct result)
-2. ✅ Uploading bulk training data
-3. ✅ Triggering retraining (show progress)
-4. ✅ Your face/camera visible throughout
+1. Uploading and predicting an image (show correct result)
+2. Uploading bulk training data
+3. Triggering retraining (show progress)
+4. Your face/camera visible throughout
 
 See QUICK_START.md for detailed video script!
 
-## 🤝 Support
+## Support
 
 If you encounter any issues:
 
@@ -280,7 +280,7 @@ If you encounter any issues:
 3. Ensure all setup steps completed
 4. Test components individually
 
-## 🌟 Final Words
+## Final Words
 
 You now have a **complete, professional-grade MLOps pipeline** that:
 
@@ -297,7 +297,7 @@ You now have a **complete, professional-grade MLOps pipeline** that:
 4. Record your demo
 5. Submit with confidence
 
-## 📝 Quick Checklist
+## Quick Checklist
 
 Before submission, verify:
 
@@ -314,7 +314,7 @@ Before submission, verify:
 
 ---
 
-## 🎊 Congratulations!
+## Congratulations!
 
 You have everything you need to succeed. Your project is **complete, professional, and ready for deployment**.
 
@@ -324,7 +324,7 @@ Focus on:
 2. Training the model successfully
 3. Recording a clear, confident video demonstration
 
-**You've got this!** 💪🚀
+**You've got this!**
 
 ---
 
@@ -335,4 +335,4 @@ Focus on:
 - Requirements: `SUBMISSION_CHECKLIST.md`
 - Details: `README.md`
 
-**Good luck!** 🍀
+**Good luck!**
