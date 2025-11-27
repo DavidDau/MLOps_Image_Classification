@@ -2,17 +2,13 @@
 
 A comprehensive end-to-end machine learning pipeline for image classification featuring automated retraining, model monitoring, and scalable deployment using Docker.
 
-## 🎥 Video Demonstration
+**[ Click here to watch the demonstration video](https://youtu.be/jbuXZ30CwvA)**
 
-[![Video Demo](https://img.shields.io/badge/Watch-Video%20Demo-red?style=for-the-badge&logo=youtube)](YOUR_YOUTUBE_LINK_HERE)
-
-**[📹 Click here to watch the demonstration video](YOUR_YOUTUBE_LINK_HERE)**
-
-## 🌐 Live Demo
+## Live Demo
 
 **Application URL**: [Add your deployed URL here if applicable]
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Project Description](#project-description)
 - [Features](#features)
@@ -26,7 +22,7 @@ A comprehensive end-to-end machine learning pipeline for image classification fe
 - [Contributing](#contributing)
 - [License](#license)
 
-## 📝 Project Description
+## Project Description
 
 This project implements a complete MLOps pipeline for leaf disease classification using Transfer Learning with MobileNetV2. The system includes:
 
@@ -37,7 +33,7 @@ This project implements a complete MLOps pipeline for leaf disease classificatio
 - **Containerized Deployment**: Docker and Docker Compose for easy deployment
 - **Load Testing**: Locust-based performance testing and scalability analysis
 
-## ✨ Features
+## Features
 
 ### 1. **Single Image Prediction**
 
@@ -77,7 +73,7 @@ This project implements a complete MLOps pipeline for leaf disease classificatio
 - `/api/metrics` - Get system metrics
 - `/api/retrain_status` - Check retraining progress
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 MLOps_Image_Classification/
@@ -129,7 +125,7 @@ MLOps_Image_Classification/
 └── requirements.txt                   # Python dependencies
 ```
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 ### Machine Learning & Data Science
 
@@ -159,7 +155,7 @@ MLOps_Image_Classification/
 - **psutil** - System monitoring
 - **Pillow (PIL)** - Image processing
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 
@@ -293,7 +289,7 @@ If you don't have a dataset ready:
    - Collect ~200 cat images and ~200 dog images from the internet
    - Organize them as shown in the dataset structure above
 
-## 📖 Usage
+## Usage
 
 ### 1. Making Predictions
 
@@ -355,7 +351,7 @@ print(result)
    - Prediction statistics
    - Retraining status
 
-## 🤖 Model Information
+## Model Information
 
 ### Architecture
 
@@ -400,7 +396,7 @@ The model is evaluated using:
 - **F1-Score**: Harmonic mean of precision and recall
 - **Confusion Matrix**: Visual representation of predictions
 
-## 📊 Load Testing Results
+## Load Testing Results
 
 ### Test Configuration
 
@@ -441,7 +437,7 @@ docker-compose -f deployment/docker-compose.yml up -d --scale web=2
 docker-compose -f deployment/docker-compose.yml up -d --scale web=4
 ```
 
-## 📚 API Documentation
+## API Documentation
 
 ### Endpoints
 
@@ -514,7 +510,7 @@ Submit image for prediction (Web Form)
 }
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -524,18 +520,14 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## Author
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+**David CYUBAHIRO**
 
-## 👥 Author
+- GitHub: [@DavidDau](https://github.com/DavidDau)
+- LinkedIn: [David CYUBAHIRO](https://linkedin.com/in/davidcyubahiro)
 
-**Your Name**
-
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [Your Name](https://linkedin.com/in/your-profile)
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - MobileNetV2 architecture by Google
 - Flask framework
@@ -543,17 +535,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Bootstrap for UI components
 - Locust for load testing
 
-## 📧 Contact
+## Contact
 
-For questions or support, please contact: your.email@example.com
+For questions or support, please contact: davidcyubahiro53@gmail.com
 
-## 🔗 Links
+## Links
 
-- **Video Demo**: [YouTube Link](YOUR_YOUTUBE_LINK_HERE)
-- **Live Application**: [Deployed URL if applicable]
+- **Video Demo**: [YouTube Link](https://youtu.be/jbuXZ30CwvA)
 - **Documentation**: This README
 - **Load Test Results**: [locust/LOAD_TEST_RESULTS.md](locust/LOAD_TEST_RESULTS.md)
-
----
-
-**Note**: Replace placeholder URLs and information with your actual details before submission.
